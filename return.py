@@ -37,3 +37,14 @@ def create_deck() -> list[dict]:
             result.append(create_card(rank,suite))
     return result
         
+def shuffle(deck: list[dict]) -> list[dict]:
+    for i in range(1000):
+        while True:
+            index_1 = random.randint(0, len(deck)-1)
+            index_2 = random.randint(0, len(deck)-1)
+            if index_1 == index_2:
+                break
+        deck[index_1] = deck[index_2] 
+    return deck
+
+
