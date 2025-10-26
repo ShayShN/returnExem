@@ -1,8 +1,8 @@
+from operator import le
 import random
 
-def create_card(rank:str,suite:str) -> dict:
-    suites = ["H","C","D","S"]
-    ranks = {"2": 2,
+suites = ["H","C","D","S"]
+ranks = {"2": 2,
              "3": 3,
              "4": 4,
              "5": 5,
@@ -15,9 +15,9 @@ def create_card(rank:str,suite:str) -> dict:
              "Q": 12,
              "K": 13,
              "A": 14,}
+def create_card(rank:str,suite:str) -> dict:
     if rank not in ranks or suite not in suites:
-        return None
-    
+        return None 
     return {"rank": rank,
             "suite": suite,
             "value": ranks[rank]}
@@ -32,7 +32,8 @@ def compare_cards(p1_card:dict, p2_card:dict) -> str:
     
 def create_deck() -> list[dict]:
     arr = []
-    for i in ["H","C","D","S"]:
-        pass
+    for i in suites:
+        for j in ranks:
+            arr.append(create_card(j,i))
+    return arr
         
-    
