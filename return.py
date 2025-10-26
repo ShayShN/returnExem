@@ -30,9 +30,6 @@ def compare_cards(p1_card:dict, p2_card:dict) -> str:
     else:
         return 'WAR'
     
-def create_deck() -> list[dict]:
-    arr = []
-    for i in ["H","C","D","S"]:
-        pass
+
         
     
