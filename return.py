@@ -51,4 +51,19 @@ def create_player(name: str = 'AI') -> dict:
     return {"name":name,
             "hand":[],
             "won_pile":[]}
-
+    
+def init_game() -> dict:
+    player_1 = create_player("shay")
+    player_2 = create_player()
+    deck = create_deck()
+    shuffle(deck)
+    player_1["hand"] = deck[0:26]
+    player_2["hand"] = deck[26:]
+    
+    return {
+            "deck": deck,
+            "player_1": player_1,
+            "player_2": player_2
+            }
+        
+    
