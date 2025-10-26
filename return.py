@@ -47,4 +47,8 @@ def shuffle(deck: list[dict]) -> list[dict]:
         deck[index_1] = deck[index_2] 
     return deck
 
+def create_player(name: str = 'AI') -> dict:
+    return {"name":name,
+            "hand":[],
+            "won_pile":[]}
 
